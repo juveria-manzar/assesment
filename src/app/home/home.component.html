@@ -1,0 +1,122 @@
+<div class="main-div">
+  <div class="center-data">
+    <table>
+      <div class="section">
+        <tr>
+          <td class="heading">Course</td>
+          <div class="sub-data">
+            <td>
+        <tr>
+          <!-- dropdown for course selection -->
+          <select
+                  [(ngModel)]="courseName"
+                  (change)="courseListUpdate()"
+                  name="course"
+                >
+                  <option *ngFor="let course of courseArray" [value]="course">
+                    {{course}}
+                  </option>
+                </select>
+        </tr>
+
+        <br />
+        <br />
+        <!-- add new course button -->
+        <tr>
+          <button
+                  type="button"
+                  class="button"
+                  (click)="showCourseField=true"
+                >
+                  Add New Course
+                </button>
+        </tr>
+        <tr>
+          <div>{{this.courseName}}</div>
+        </tr>
+        <!-- add new course text field displays on button click-->
+        <tr>
+          <div *ngIf="showCourseField">
+            <input
+                    class="input"
+                    type="text"
+                    [(ngModel)]="courseAdded"
+                    required
+                  />
+            <p class="right" (click)="addCourseList()">&#10004;</p>
+            <p class="wrong" (click)="closeCourseField()">&#10006;</p>
+          </div>
+        </tr>
+        </td>
+      </div>
+      </tr>
+  </div>
+
+  <div class="section">
+    <tr>
+      <td class="heading">Students</td>
+      <div class="sub-data">
+        <td>
+          <!-- course dropdown -->
+    <tr>
+      <select
+                  name="sCourse"
+                  [(ngModel)]="studentCourse"
+                  (ngModelChange)="fetchSelectedValue()"
+                >
+                  <option
+                    *ngFor="let studentCourse of courseArray"
+                    [value]="studentCourse"
+                    >{{studentCourse}}
+                  </option>
+                </select>
+    </tr>
+    <br>
+    <br>
+    <!-- add student button displays on course selection -->
+    <tr>
+      <div *ngIf="isCourseSelected">
+        <button
+                    type="button"
+                    class="button"
+                    (click)="addStudentButton=true"
+                  >
+                    Add Student to Course
+                  </button>
+      </div>
+    </tr>
+    <!-- add student to course text field displays on button click -->
+    <tr>
+      <div *ngIf="addStudentButton">
+        <input
+          type="text"
+          [(ngModel)]="studentName"
+          id="studentValue"
+          name="studentvalue"
+          required
+        />
+        <p class="right" (click)="addstudentlist()">&#10004;</p>
+        <p class="wrong" (click)="closeStudentField()">&#10006;</p>
+      </div>
+    </tr>
+    <!-- students dropdown for the selected course -->
+    <tr>
+      <select
+                  name="students"
+                  [(ngModel)]="showCourseStudents"
+                >
+                <option
+                    *ngFor="let name of courseStudents[studentCourse]"
+                    [value]="name.student"
+                    >{{name.student}}
+                  </option>
+                  {{this.studentCourse}}
+                </select>
+    </tr>
+    </td>
+  </div>
+  </tr>
+</div>
+</table>
+</div>
+</div>

@@ -1,0 +1,65 @@
+.main-div {
+  margin: 100px 100px 0 300px;
+  width: 50%;
+  height: 600px;
+  border-style: solid;
+  border-color: rgb(53, 168, 235);
+  text-align: center;
+  font-family: sans-serif;
+}
+.center-data {
+  margin: 35px 30px 100px 150px;
+}
+.section {
+  padding-bottom: 150px;
+  box-sizing: border-box;
+}
+.heading {
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 30px;
+}
+.sub-data {
+  padding-left: 70px;
+  box-sizing: border-box;
+}
+
+select {
+  width: 150px;
+  height: 30px;
+  background-color: #afceff;
+  color: white;
+  border: #afceff;
+  font-size: 20px;
+}
+
+.button {
+  width: 150px;
+  height: 30px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  border: #afceff;
+  background-color: #afceff;
+}
+
+.right {
+  color: green;
+  size: 25px;
+  margin-top: -20px;
+  margin-left: 200px;
+  display: block;
+  cursor: pointer;
+}
+.wrong {
+  color: red;
+  margin-top: -39px;
+  margin-left: 235px;
+  /* float: left; */
+  size: 25px;
+  cursor: pointer;
+}
+
+.tablediv {
+  margin-bottom: 40px;
+}
